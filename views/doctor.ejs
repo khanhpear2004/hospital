@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title> Thông Tin Bác Sĩ </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="../Medilab/Medilab/assets/img/favicon.png" rel="icon">
+  <link href="../Medilab/Medilab/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="../Medilab/Medilab/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="../Medilab/Medilab/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../Medilab/Medilab/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../Medilab/Medilab/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../Medilab/Medilab/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../Medilab/Medilab/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../Medilab/Medilab/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../Medilab/Medilab/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../Medilab/Medilab/assets/css/style.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope"></i> <a href="mailto:abchospitalcontact@example.com">abchospitalcontact@example.com</a>
+        <i class="bi bi-phone"></i> +1 5589 55488 55
+      </div>
+      <div class="d-none d-lg-flex social-links align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="../Medilab/Medilab/index.html" class="text-decoration-none">ABC Hospital</a></h1>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+            <li><a class="nav-link scrollto fw-bold text-uppercase" href="../Medilab/Medilab/benh_nhan/home_benhnhan.html">Home</a></li>
+            <li><a class="nav-link scrollto active fw-bold text-uppercase" href="../Medilab/Medilab/benh_nhan/check_profile_bac_si.html">Thông Tin Bác Sĩ</a></li>          
+            <li>            
+                <div class="dropdown">
+                    <a class="nav-link scrollto fw-bold text-uppercase dropdown-toggle" href="#">Thông Tin Cá Nhân</a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item text-uppercase" href="../Medilab/Medilab/benh_nhan/ho_so_benh_an.html">Hồ Sơ Bệnh Án</a></li>
+                    <li><a class="dropdown-item text-uppercase" href="../Medilab/Medilab/benh_nhan/update_thong_tin_ca_nhan.html">Chỉnh Sửa Thông Tin Cá Nhân</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <a href="../Medilab/Medilab/benh_nhan/booking/index.html" class="appointment-btn scrollto text-decoration-none fw-bold text-uppercase"> Booking Bác Sĩ </a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      
+    </section><!-- End Breadcrumbs Section -->
+
+    <section class="inner-page">
+        <h1 align="center"> Profile Bác Sĩ </h1>
+
+        <div class="container">
+        <div class="row">
+            <% for(var i = 0; i < list.length; i++){ %>
+                <div class="col col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="img/doctors/<%= list[i].image %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Bác Sĩ <%= list[i].name %></h5>
+                    <p class="card-text"><%= list[i].comment %></p>
+                    <a href="profile/<%=id=list[i]._id%>" class="btn btn-primary">Xem Profile</a>
+                    </div>
+                </div>
+                </div>
+            <% } %>
+  
+            <!-- <div class="col col-md-4">
+              <div class="card" style="width: 18rem;">
+                <img src="../Medilab/Medilab/assets/img/doctors/doctors-2.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Bác Sĩ Gây Mê Sarah Jhonson</h5>
+                  <p class="card-text">Chuyên gia an toàn, kỹ thuật và chăm sóc sức khỏe trong quá trình phẫu thuật.</p>
+                  <a href="profile/<%=id=list[1]._id%>" class="btn btn-primary">Xem Profile</a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col col-md-4">
+              <div class="card" style="width: 18rem;">
+                <img src="../Medilab/Medilab/assets/img/doctors/doctors-3.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Bác Sĩ Tim Mạch William Anderson</h5>
+                  <p class="card-text">Chuyên gia tận tâm, giàu kinh nghiệm trong chẩn đoán và điều trị các vấn đề về tim mạch.</p>
+                  <a href="../forms/doctor_profile.php?id=3" class="btn btn-primary">Xem Profile</a>
+                </div>
+              </div>
+            </div> -->
+          </div>
+
+          <!-- <div class="row">
+            <div class="col col-md-4">
+              <div class="card" style="width: 18rem;">
+                <img src="../Medilab/Medilab/assets/img/doctors/doctors-4.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Bác Sĩ Giải Phẫu Thần Kinh Amanda Jepson</h5>
+                  <p class="card-text">Chuyên gia hiểu biết sâu sắc về hệ thống thần kinh và kỹ thuật phẫu thuật.</p>
+                  <a href="../forms/doctor_profile.php?id=4" class="btn btn-primary">Xem Profile</a>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>ABC Hospital</h3>
+            <p>
+              268 Lý Thường Kiệt <br>
+              Phường 14, Quận 10<br>
+              Thành phố Hồ Chí Minh <br><br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> abchospitalcontact@example.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Links Hữu Ích</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Trang Chủ</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Giới Thiệu</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Dịch Vụ</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Điều Khoản Dịch Vụ</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Chính Sách Bảo Mật</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Dịch Vụ Của Chúng Tôi</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Khám Tim Mạch</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Cung Cấp Thuốc</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Chăm Sóc Bệnh Nhân</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Xét Nghiệm DNA</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Cấp Cứu Khẩn Cấp</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4 class="text-capitalize">Tham gia bản tin của chúng tôi</h4>
+            <p>Hãy tham gia bảng tin của chúng tôi để cập nhật tin tức, sự kiện và thông báo quan trọng từ bệnh viện. Đăng ký ngay để không bỏ lỡ thông tin mới nhất!</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>ABC Hospital</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          Designed by <a href="https://www.facebook.com/chuong.duong.5264382/">Khoa Than</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../Medilab/Medilab/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../Medilab/Medilab/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../Medilab/Medilab/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../Medilab/Medilab/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../Medilab/Medilab/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../Medilab/Medilab/assets/js/main.js"></script>
+
+</body>
+
+</html>

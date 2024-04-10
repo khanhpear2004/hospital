@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <script src="/docs/5.3/assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Khanh's Hospital</title>
+    </head>
+
+    <body>
+        <h1>THIS IS A NEW WEB</h1>
+
+        <% if(day === "Wednesday") { %>
+          <p style="color: red"> today is <%= day %> </p>
+        <% } else{ %>
+          <p style="color: blue">today is <%= day %></p>
+        <% } %>
+      <div class="box">
+        <div class="mainbox" id="shadowbox">
+          <div class="content">
+            <ul>
+              <li>The new Paitence</li>
+              <li>Age</li>
+              <li>gender</li>
+              <li>DayOfBirth</li>
+              <li>illness Condition</li>
+            </ul>
+
+        <form  action="/" method="post">
+            <input class="input" type="text" name="newName" placeholder="Name">
+            <input class="input" type="text" name="newAge" placeholder="Age">
+            <input class="input" type="text" name="newExp" placeholder="Experience Years">
+            <select class="input" name="newGen">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <button type="submit" name="button">Submit</button>
+            <a href="http://localhost:5500/data">Click here to see the data</a>
+        </form>
+      </div>
+      </div>
+    </div>
+        
+        <div class="secondbox">
+
+        </div>
+    </body>
+   </html> 

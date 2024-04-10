@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title> Thông Tin Cá Nhân </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="../assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope"></i> <a href="mailto:abchospitalcontact@example.com">abchospitalcontact@example.com</a>
+        <i class="bi bi-phone"></i> +1 5589 55488 55
+      </div>
+      <div class="d-none d-lg-flex social-links align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="../index.html" class="text-decoration-none">ABC Hospital</a></h1>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto fw-bold text-uppercase" href="./home_benhnhan.html">Home</a></li>
+            <li><a class="nav-link scrollto fw-bold text-uppercase" href="./check_profile_bac_si.html">Thông Tin Bác Sĩ</a></li>          
+          <li>            
+            <div class="dropdown">
+                <a class="nav-link scrollto fw-bold text-uppercase dropdown-toggle active" href="#">Thông Tin Cá Nhân</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item text-uppercase" href="./ho_so_benh_an.html">Hồ Sơ Bệnh Án</a></li>
+                  <li><a class="dropdown-item text-uppercase active" href="./update_thong_tin_ca_nhan.html">Chỉnh Sửa Thông Tin Cá Nhân</a></li>
+                </ul>
+            </div>
+            </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <a href="./booking/index.html" class="appointment-btn scrollto text-decoration-none fw-bold text-uppercase"> Booking Bác Sĩ </a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      
+    </section><!-- End Breadcrumbs Section -->
+
+    <section class="inner-page">
+      <div class="container">        
+        <h1 class="text-uppercase" style="margin-bottom: 24px;" align="center"> Thông Tin Cá Nhân </h1>
+        
+        <form action="../query/connectDB.php" method="POST">
+          <div class="row my-2">
+            
+            <div class="col col-md-3">
+              <h5> 
+                Họ và Tên: 
+                <nobr id="name_default">
+                  Gumball Watterson                  
+                </nobr>                
+              </h5>              
+            </div>
+
+            <div class="col col-md-2">
+              <input type="text" name="name_modify" id="name_modify" value="Gumball Watterson" class="form-control">
+            </div>
+
+            <div class="col col-md-1">
+              <script>
+                $(document).ready(function() {
+                  $("#name_modify").hide();
+                  $("#name_default").show();
+                  $("#name_submit").hide();
+                  $("#name_modify_button").show();
+
+                  $("#name_modify_button").click(function() {
+                    $("#name_default").hide();
+                    $("#name_modify").show();
+                    $("#name_submit").show();
+                    $("#name_modify_button").hide();
+                  });
+                });                
+              </script>              
+              
+              <input type="submit" name="name_submit" id="name_submit" value="Chỉnh sửa" class="btn btn-primary">
+              <p class="btn fs-6 p-0 fw-bold text-primary fst-italic" id="name_modify_button"> Chỉnh Sửa </p>
+            </div>
+
+            <div class="col col-md-3">
+              <h5> 
+                Số Điện Thoại: 
+                <nobr id="phone_number_default">
+                  123 456 7890
+                </nobr>                
+              </h5>              
+            </div>
+
+            <div class="col col-md-2">
+              <input type="number" name="phone_number_modify" id="phone_number_modify" value="123 456 7890" class="form-control">
+            </div>
+
+            <div class="col col-md-1">
+              <script>
+                $(document).ready(function() {
+                  $("#phone_number_modify").hide();
+                  $("#phone_number_default").show();
+                  $("#phone_number_submit").hide();
+                  $("#phone_number_modify_button").show();
+
+                  $("#phone_number_modify_button").click(function() {
+                    $("#phone_number_default").hide();
+                    $("#phone_number_modify").show();
+                    $("#phone_number_submit").show();
+                    $("#phone_number_modify_button").hide();
+                  });
+                });                
+              </script>              
+              
+              <input type="submit" name="phone_number_submit" id="phone_number_submit" value="Chỉnh sửa" class="btn btn-primary">
+              <p class="btn fs-6 p-0 fw-bold text-primary fst-italic" id="phone_number_modify_button"> Chỉnh Sửa </p>
+            </div>      
+          </div>  
+          
+          <div class="row my-2">
+            <div class="col col-md-3">
+              <h5> 
+                Ngày Sinh: 
+                <nobr id="date_of_birth_default">
+                  dd/mm/yyyy
+                </nobr>                
+              </h5>              
+            </div>
+
+            <div class="col col-md-2">
+              <input type="text" name="date_of_birth_modify" id="date_of_birth_modify" value="dd/mm/yyyy" class="form-control">
+            </div>
+
+            <div class="col col-md-1">
+              <script>
+                $(document).ready(function() {
+                  $("#date_of_birth_modify").hide();
+                  $("#date_of_birth_default").show();
+                  $("#date_of_birth_submit").hide();
+                  $("#date_of_birth_modify_button").show();
+
+                  $("#date_of_birth_modify_button").click(function() {
+                    $("#date_of_birth_default").hide();
+                    $("#date_of_birth_modify").show();
+                    $("#date_of_birth_submit").show();
+                    $("#date_of_birth_modify_button").hide();
+                  });
+                });                
+              </script>              
+              
+              <input type="submit" name="date_of_birth_submit" id="date_of_birth_submit" value="Chỉnh sửa" class="btn btn-primary">
+              <p class="btn fs-6 p-0 fw-bold text-primary fst-italic" id="date_of_birth_modify_button"> Chỉnh Sửa </p>
+            </div>      
+
+            <div class="col col-md-3">
+              <h5> 
+                Giới Tính: 
+                <nobr id="gender_default">
+                  Non-binary
+                </nobr>                
+              </h5>              
+            </div>
+
+            <div class="col col-md-2">
+              <div class="mb-3" id="gender_option">
+                <div class="form-check form-check-inline">                        
+                  <label class="form-check-label" for="gender_modify">Nam</label>
+                  <input class="form-check-input" type="radio" id="gender_modify" name="gender_modify" value="Nam">
+                </div>
+                <div class="form-check form-check-inline">                        
+                  <label class="form-check-label" for="gender_modify">Nữ</label>
+                  <input class="form-check-input" type="radio" id="gender_modify" name="gender_modify" value="Nữ">
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-md-1">
+              <script>
+                $(document).ready(function() {
+                  $("#gender_option").hide();
+                  $("#gender_default").show();
+                  $("#gender_submit").hide();
+                  $("#gender_modify_button").show();
+
+                  $("#gender_modify_button").click(function() {
+                    $("#gender_default").hide();
+                    $("#gender_option").show();
+                    $("#gender_submit").show();
+                    $("#gender_modify_button").hide();
+                  });
+                });                
+              </script>              
+              
+              <input type="submit" name="gender_submit" id="gender_submit" value="Chỉnh sửa" class="btn btn-primary">
+              <p class="btn fs-6 p-0 fw-bold text-primary fst-italic" id="gender_modify_button"> Chỉnh Sửa </p>
+            </div>      
+          </div>
+
+          <div class="row my-2">
+            <div class="col col-md-3">
+              <h5> 
+                Nghề Nghiệp: 
+                <nobr id="job_default">
+                  Sinh Viên BK
+                </nobr>                
+              </h5>              
+            </div>
+
+            <div class="col col-md-2">
+              <input type="text" name="job_modify" id="job_modify" value="Sinh Viên BK" class="form-control">
+            </div>
+
+            <div class="col col-md-1">
+              <script>
+                $(document).ready(function() {
+                  $("#job_modify").hide();
+                  $("#job_default").show();
+                  $("#job_submit").hide();
+                  $("#job_modify_button").show();
+
+                  $("#job_modify_button").click(function() {
+                    $("#job_default").hide();
+                    $("#job_modify").show();
+                    $("#job_submit").show();
+                    $("#job_modify_button").hide();
+                  });
+                });                
+              </script>              
+              
+              <input type="submit" name="job_submit" id="job_submit" value="Chỉnh sửa" class="btn btn-primary">
+              <p class="btn fs-6 p-0 fw-bold text-primary fst-italic" id="job_modify_button"> Chỉnh Sửa </p>
+            </div>
+          </div>
+        </form>
+      </div>      
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>ABC Hospital</h3>
+            <p>
+              268 Lý Thường Kiệt <br>
+              Phường 14, Quận 10<br>
+              Thành phố Hồ Chí Minh <br><br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> abchospitalcontact@example.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Links Hữu Ích</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Trang Chủ</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Giới Thiệu</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Dịch Vụ</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Điều Khoản Dịch Vụ</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Chính Sách Bảo Mật</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Dịch Vụ Của Chúng Tôi</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Khám Tim Mạch</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Cung Cấp Thuốc</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Chăm Sóc Bệnh Nhân</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Xét Nghiệm DNA</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Cấp Cứu Khẩn Cấp</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4 class="text-capitalize">Tham gia bản tin của chúng tôi</h4>
+            <p>Hãy tham gia bảng tin của chúng tôi để cập nhật tin tức, sự kiện và thông báo quan trọng từ bệnh viện. Đăng ký ngay để không bỏ lỡ thông tin mới nhất!</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>ABC Hospital</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          Designed by <a href="https://www.facebook.com/chuong.duong.5264382/">Khoa Than</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>
