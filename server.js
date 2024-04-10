@@ -52,6 +52,8 @@ mongoose.connect("mongodb+srv://khanhpear:123@cluster0.rzo0p3f.mongodb.net/hospi
 //     gender: "female"
 // })
 
+console.log("hello");
+
 const DoctorSchema = {
     name: String,
     experience: String,
