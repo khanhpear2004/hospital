@@ -60,6 +60,7 @@ const DoctorSchema = {
     genre: String,
     degree: String,
     comment: String,
+    gender: String,
     image: String
 }
 
@@ -70,27 +71,33 @@ const doc1 = new Docs({
     experience: "10 năm làm việc tại bệnh viện",
     genre: "chuyên khám nội soi trực tràng",
     degree: "Có bằng giỏi trong việc chống lũ",
-    comment: "Ủng hộ phong trào LGBT",
+    comment: "Ủng hộ phong trào LGBT, chắc chắn không phải vì anh ấy Ga...",
+    gender: "non-binary",
     image: "doctors-1.jpg"
 });
 
 const doc2 = new Docs({
     name: "Dương Thanh Tú",
     experience: "30 năm làm việc tại bệnh viện",
-    genre: "chuyên khám nội soi trực tràng",
-    degree: "Có bằng giỏi trong việc chống lũ",
-    comment: "Ủng hộ phong trào LGBT",
+    genre: "chuyên viên khám bệnh ngoài da",
+    degree: "Có bằng giỏi trong lĩnh vực phân biệt màu da",
+    comment: "Bị mù màu kinh niên khi thế giới trong mắt anh ấy toàn là màu đen",
+    gender: "alpha male",
     image: "doctors-2.jpg"
 });
 
 const doc3 = new Docs({
     name: "Lô Hoàng Bảo",
     experience: "20 năm làm việc tại bệnh viện",
-    genre: "chuyên khám nội soi trực tràng",
-    degree: "Có bằng giỏi trong việc chống lũ",
-    comment: "Ủng hộ phong trào LGBT",
+    genre: "chuyên khám tim mạch, nhắm vào tim em",
+    degree: "Có bằng giỏi trong việc hay khen người khác giỏi, trong khi anh ấy nấu xong hết mẹ rồi",
+    comment: "Ủng hộ phong trào đua xe, racist",
+    gender: "male",
     image: "doctors-3.jpg"
 });
+
+const a = [doc1, doc2, doc3];
+Docs.insertMany(a);
 
 const paitenceSchema = new mongoose.Schema({
     name: String,
@@ -101,18 +108,6 @@ const paitenceSchema = new mongoose.Schema({
 });
 
 const paitence = mongoose.model("paitence", paitenceSchema);
-
-const fruitSchema = new mongoose.Schema({
-    name: String
-})
-
-const Fruit = mongoose.model("fruit", fruitSchema);
-
-const fruit = new Fruit({
-    name: "Apple"
-})
-
-//fruit.save();
 
 const guest = new paitence({
     name: "Loc",
