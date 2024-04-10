@@ -22,14 +22,14 @@ mongoose.connect("mongodb+srv://khanhpear:123@cluster0.rzo0p3f.mongodb.net/hospi
 
 //Docs.save();
 
-const doctorSchema = {
-    name: String,
-    age: Number,
-    experienceYear: Number,
-    gender: String
-};
+// const doctorSchema = {
+//     name: String,
+//     age: Number,
+//     experienceYear: Number,
+//     gender: String
+// };
 
-const Doctor = mongoose.model("doctor", new mongoose.Schema(doctorSchema));
+// const Doctor = mongoose.model("doctor", new mongoose.Schema(doctorSchema));
 
 // const docs1 = new Doctor({
 //     name: "Vinh",
@@ -52,7 +52,7 @@ const Doctor = mongoose.model("doctor", new mongoose.Schema(doctorSchema));
 //     gender: "female"
 // })
 
-const BacsiSchema = {
+const DoctorSchema = {
     name: String,
     experience: String,
     genre: String,
@@ -61,9 +61,34 @@ const BacsiSchema = {
     image: String
 }
 
-const Docs = mongoose.model("Bacsi", new mongoose.Schema(BacsiSchema));
+const Docs = mongoose.model("Doctor", new mongoose.Schema(DoctorSchema));
 
-//Doc1.save();
+const doc1 = new Docs({
+    name: "Nguyễn Xuân Lộc",
+    experience: "10 năm làm việc tại bệnh viện",
+    genre: "chuyên khám nội soi trực tràng",
+    degree: "Có bằng giỏi trong việc chống lũ",
+    comment: "Ủng hộ phong trào LGBT",
+    image: "doctors-1.jpg"
+});
+
+const doc2 = new Docs({
+    name: "Dương Thanh Tú",
+    experience: "30 năm làm việc tại bệnh viện",
+    genre: "chuyên khám nội soi trực tràng",
+    degree: "Có bằng giỏi trong việc chống lũ",
+    comment: "Ủng hộ phong trào LGBT",
+    image: "doctors-2.jpg"
+});
+
+const doc3 = new Docs({
+    name: "Lô Hoàng Bảo",
+    experience: "20 năm làm việc tại bệnh viện",
+    genre: "chuyên khám nội soi trực tràng",
+    degree: "Có bằng giỏi trong việc chống lũ",
+    comment: "Ủng hộ phong trào LGBT",
+    image: "doctors-3.jpg"
+});
 
 const paitenceSchema = new mongoose.Schema({
     name: String,
